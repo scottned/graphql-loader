@@ -31,7 +31,7 @@ describe('Sync Schema Loader', () => {
     const schema = loadSchema.sync(glob)
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
@@ -68,13 +68,13 @@ describe('Schema Loader', () => {
     })
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
 
     it('expect callback schema to be a graphql schema', (done) => {
-      expect(cbSchema).to.exist
+      expect(cbSchema).to.exist()
       expect(cbSchema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
@@ -94,13 +94,13 @@ describe('Schema Loader', () => {
     })
 
     it('expect glob error to be triggered', (done) => {
-      expect(schemaErrors).to.exist
+      expect(schemaErrors).to.exist()
       expect(schemaErrors.message).to.match(invalidGlobPattern)
       done()
     })
 
     it('expect callbaack glob error to be triggered', (done) => {
-      expect(cbSchemaErrors).to.exist
+      expect(cbSchemaErrors).to.exist()
       expect(cbSchemaErrors.message).to.match(invalidGlobPattern)
       done()
     })
@@ -120,12 +120,12 @@ describe('Schema Loader', () => {
     })
 
     it('expect error to be invalidSchemaPattern', (done) => {
-      expect(schemaErrors).to.exist
+      expect(schemaErrors).to.exist()
       expect(schemaErrors).to.match(invalidSchemaPattern)
       done()
     })
     it('expect callback error to be invalidSchemaPattern', (done) => {
-      expect(schemaErrors).to.exist
+      expect(schemaErrors).to.exist()
       expect(schemaErrors).to.match(invalidSchemaPattern)
       done()
     })
@@ -151,11 +151,11 @@ describe('Schema Loader', () => {
     })
 
     it('expect error to exist', (done) => {
-      expect(results).to.exist
+      expect(results).to.exist()
       done()
     })
     it('expect callback error to exist', (done) => {
-      expect(cbResults).to.exist
+      expect(cbResults).to.exist()
       done()
     })
   })
@@ -167,7 +167,7 @@ describe('Loading Document', () => {
     before(() => loadDocument(glob).then((results) => doc = results))
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(doc).to.exist
+      expect(doc).to.exist()
       expect(doc.kind).to.equal('Document')
       done()
     })
@@ -189,7 +189,7 @@ describe('Combing Documents', () => {
     })
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
@@ -198,7 +198,6 @@ describe('Combing Documents', () => {
 
 describe('Build Executable Schema From GraphQL Modules', () => {
   describe(`when preloading documents`, () => {
-    let doc: DocumentNode
     let schema: GraphQLSchema
     before(() => {
       return Promise.all([
@@ -211,14 +210,13 @@ describe('Build Executable Schema From GraphQL Modules', () => {
     })
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
   })
 
   describe(`when providing array of functions`, () => {
-    let doc: DocumentNode
     let schema: GraphQLSchema
     before(() => {
       return Promise.all([
@@ -231,14 +229,13 @@ describe('Build Executable Schema From GraphQL Modules', () => {
     })
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
   })
 
   describe(`when using promises`, () => {
-    let doc: DocumentNode
     let schema: GraphQLSchema
     before(() => {
       const modules = [
@@ -249,7 +246,7 @@ describe('Build Executable Schema From GraphQL Modules', () => {
     })
 
     it('expect schema to be a graphql schema', (done) => {
-      expect(schema).to.exist
+      expect(schema).to.exist()
       expect(schema).to.be.an.instanceof(GraphQLSchema)
       done()
     })
